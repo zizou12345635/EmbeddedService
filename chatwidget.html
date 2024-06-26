@@ -1,23 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Messaging Example</title>
+    <!-- Add any other meta tags or stylesheets here -->
+</head>
+<body>
+    <!-- Your chat widget will be initialized here -->
+    <script type="text/javascript">
+        function initEmbeddedMessaging() {
+            try {
+                var embeddedservice_bootstrap = window.embeddedservice_bootstrap || {};
+                embeddedservice_bootstrap.settings = {
+                    language: 'en_US', // For example, enter 'en' or 'en-US'
+                    defaultMinimizedText: 'Chat with MH',
+                    disabledMinimizedText: 'We are available from 0700-2300hrs MYT (Mon-Sun)'
+                };
 
-<script type='text/javascript'>
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-
-			embeddedservice_bootstrap.init(
-				'00DF70000009vjq',
-				'MH_Web_Chat_Embedded_Service',
-				'https://malaysiaairlinesberhad2--ccm.sandbox.my.site.com/ESWMHWebChatEmbeddedS1715371481062',
-				{
-					scrt2URL: 'https://malaysiaairlinesberhad2--ccm.sandbox.my.salesforce-scrt.com'
-				}
-			);
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
-</script>
-<script type='text/javascript' src='https://malaysiaairlinesberhad2--ccm.sandbox.my.site.com/ESWMHWebChatEmbeddedS1715371481062/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
+                embeddedservice_bootstrap.init(
+                    '00DF70000009vjq',
+                    'MH_Web_Chat_Embedded_Service',
+                    'https://malaysiaairlinesberhad2--ccm.sandbox.my.site.com/ESWMHWebChatEmbeddedS1715371481062',
+                    {
+                        scrt2URL: 'https://malaysiaairlinesberhad2--ccm.sandbox.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        }
+    </script>
+    <script type="text/javascript" src="https://malaysiaairlinesberhad2--ccm.sandbox.my.site.com/ESWMHWebChatEmbeddedS1715371481062/assets/js/bootstrap.min.js" onload="initEmbeddedMessaging()"></script>
+    <!-- Add any other scripts or content you need -->
+</body>
 </html>
